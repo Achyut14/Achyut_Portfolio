@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global background and text color for light and dark mode */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @apply bg-white text-gray-900 dark:bg-black dark:text-white;
+  min-height: 100vh;
+}
+
+/* Styles for links */
+a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+/* Headings: Use Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  @apply text-gray-900 dark:text-white;
+}
+
+/* General text color for paragraphs, spans, etc. */
+p, span, div, section {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+/* Optional: Set individual sections to inherit dark mode styling */
+section {
+  @apply bg-transparent dark:bg-gray-800;
+}
+
+/* Code styling */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Padding to prevent navbar overlap */
+.section-padding {
+  padding-top: 4rem;
+}
