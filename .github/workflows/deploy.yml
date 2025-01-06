@@ -31,3 +31,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: Portfolio/portfolio_3/build
           clean: true
+          user_name: "Achyut14"
+          user_email: "achutdahal14@gmail.com"
