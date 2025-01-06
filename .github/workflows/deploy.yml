@@ -1,0 +1,33 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - Achyut_Portfolio
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        working-directory: Portfolio/portfolio_3
+        run: npm install
+
+      - name: Build project
+        working-directory: Portfolio/portfolio_3
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Portfolio/portfolio_3/build
+          clean: true
